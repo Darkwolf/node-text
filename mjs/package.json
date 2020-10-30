@@ -1,0 +1,39 @@
+{
+  "name": "@darkwolf/text.mjs",
+  "version": "1.0.0",
+  "description": "Text",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./": "./lib/",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darkwolf/node-text.git"
+  },
+  "keywords": [
+    "darkwolf",
+    "dw",
+    "text",
+    "mjs",
+    "builder",
+    "converter",
+    "formatter"
+  ],
+  "author": "Pavel Wolf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Darkwolf/node-text/issues"
+  },
+  "homepage": "https://github.com/Darkwolf/node-text#readme",
+  "dependencies": {
+    "@darkwolf/helper.mjs": "^1.0.6"
+  }
+}
