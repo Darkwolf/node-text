@@ -8,7 +8,6 @@
 ```javascript
 // ECMAScript
 import Text from '@darkwolf/text.mjs'
-
 // CommonJS
 const Text = require('@darkwolf/text.cjs')
 
@@ -26,7 +25,7 @@ const other = text
   })
 text.value // => 'Ave, @PavelWolfDark!'
 other.value // => 'Ave, @PavelWolfDark!\nWFC: 1.00000001'
-const template = `${new Text('Ave, Darkwolf!').newLine()}${other}` // =>'Ave, Darkwolf!\nAve, @PavelWolfDark!\nWFC: 1.00000001'
+const template = `${new Text('Ave, Darkwolf!').newLine()}${other}` // => 'Ave, Darkwolf!\nAve, @PavelWolfDark!\nWFC: 1.00000001'
 ```
 ## [API Documentation](https://github.com/Darkwolf/node-text/blob/master/docs/API.md)
 ## Contact Me

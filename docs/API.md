@@ -15,76 +15,80 @@
 #### `static` Text.length
 * returns: <[number][number]> Defaults to `0`.
 
-#### `static` Text.words(string)
-* `string` <[string][string]>
+#### `static` Text.valueOf(text)
+* `text` <[string][string] | [Text](#class-text)>
+* returns: <[string][string]>
+
+#### `static` Text.words(text)
+* `text` <[string][string] | [Text](#class-text)>
 * returns: <[Array][Array]<[string][string]>>
 
-#### `static` Text.capitalize(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'Ave, darkwolf!'`.
+#### `static` Text.capitalize(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'Ave, darkwolf!'`.
 * returns: <[string][string]>
 
-#### `static` Text.lowerCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave, darkwolf!'`.
+#### `static` Text.lowerCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'ave, darkwolf!'`.
 * returns: <[string][string]>
 
-#### `static` Text.upperCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'AVE, DARKWOLF!'`.
+#### `static` Text.upperCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'AVE, DARKWOLF!'`.
 * returns: <[string][string]>
 
-#### `static` Text.camelCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'aveDarkwolf'`.
+#### `static` Text.camelCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'aveDarkwolf'`.
 * returns: <[string][string]>
 
-#### `static` Text.pascalCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'AveDarkwolf'`.
+#### `static` Text.pascalCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'AveDarkwolf'`.
 * returns: <[string][string]>
 
-#### `static` Text.snakeCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave_darkwolf'`.
+#### `static` Text.snakeCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'ave_darkwolf'`.
 * returns: <[string][string]>
 
-#### `static` Text.constantCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'AVE_DARKWOLF'`.
+#### `static` Text.constantCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'AVE_DARKWOLF'`.
 * returns: <[string][string]>
 
-#### `static` Text.kebabCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave-darkwolf'`.
+#### `static` Text.kebabCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'ave-darkwolf'`.
 * returns: <[string][string]>
 
-#### `static` Text.trainCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'Ave-Darkwolf'`.
+#### `static` Text.trainCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'Ave-Darkwolf'`.
 * returns: <[string][string]>
 
-#### `static` Text.dotCase(string)
-* `string` <[string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave.darkwolf'`.
+#### `static` Text.dotCase(text)
+* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'ave.darkwolf'`.
 * returns: <[string][string]>
 
-#### `static` Text.template(string, props[, options])
-* `string` <[string][string]> Property path must have format: `'{object.property.name.array[0]}'` or `'array[-1]'`. Path with index `'[-1]'` will return the last argument of the array, then `'[-2]'` will return the second last argument. If the negative modulo index is greater than the length of the array, the first argument will be returned.
+#### `static` Text.template(text, props[, options])
+* `text` <[string][string] | [Text](#class-text)> Property path must have format: `'{object.property.name.array[0]}'` or `'array[-1]'`. Path with index `'[-1]'` will return the last argument of the array, then `'[-2]'` will return the second last argument. If the negative modulo index is greater than the length of the array, the first argument will be returned.
 * `props` <[Object][Object]>
 * `options` <[Object][Object]>
   * `normalize` <?[boolean][boolean]> If `true` and property is `undefined` or `null` will be replaced with `''`. Defaults to `true`.
 * returns: <[string][string]>
 
-#### `static` Text.padStart(string, targetLength[, padString])
-* `string` <[string][string]>
+#### `static` Text.padStart(text, targetLength[, padString])
+* `text` <[string][string] | [Text](#class-text)>
 * `targetLength` <[number][number]>
 * `padString` <[string][string]>
 * returns: <[string][string]>
 
-#### `static` Text.padEnd(string, targetLength[, padString])
-* `string` <[string][string]>
+#### `static` Text.padEnd(text, targetLength[, padString])
+* `text` <[string][string] | [Text](#class-text)>
 * `targetLength` <[number][number]>
 * `padString` <[string][string]>
 * returns: <[string][string]>
 
-#### `static` Text.repeat(string, count)
-* `string` <[string][string]>
+#### `static` Text.repeat(text, count)
+* `text` <[string][string] | [Text](#class-text)>
 * `count` <[number][number]>
 * returns: <[string][string]>
 
-#### `static` Text.replace(string, regex, replacer)
-* `string` <[string][string]>
+#### `static` Text.replace(text, regex, replacer)
+* `text` <[string][string] | [Text](#class-text)>
 * `regex` <[RegExp][RegExp] | [string][string]>
 * `replacer` <[string][string] | [Function][Function](<[string][string]>, ...<[string][string]>, <[number][number]>, <[string][string]>)>
   * `match` <[string][string]>
@@ -93,8 +97,8 @@
   * `string` <[string][string]>
 * returns: <[string][string]>
 
-#### `static` Text.replaceAll(string, regex, replacer)
-* `string` <[string][string]>
+#### `static` Text.replaceAll(text, regex, replacer)
+* `text` <[string][string] | [Text](#class-text)>
 * `regex` <[RegExp][RegExp] | [string][string]>
 * `replacer` <[string][string] | [Function][Function](<[string][string]>, ...<[string][string]>, <[number][number]>, <[string][string]>)>
   * `match` <[string][string]>
@@ -103,69 +107,69 @@
   * `string` <[string][string]>
 * returns: <[string][string]>
 
-#### `static` Text.slice(string, startIndex[, endIndex])
-* `string` <[string][string]>
+#### `static` Text.slice(text, startIndex[, endIndex])
+* `text` <[string][string] | [Text](#class-text)>
 * `startIndex` <[number][number]>
 * `endIndex` <[number][number]>
 * returns: <[string][string]>
 
-#### `static` Text.substring(string, startIndex[, beforeIndex])
-* `string` <[string][string]>
+#### `static` Text.substring(text, startIndex[, beforeIndex])
+* `text` <[string][string] | [Text](#class-text)>
 * `startIndex` <[number][number]>
 * `beforeIndex` <[number][number]>
 * returns: <[string][string]>
 
-#### `static` Text.trim(string)
-* `string` <[string][string]>
+#### `static` Text.trim(text)
+* `text` <[string][string] | [Text](#class-text)>
 * returns: <[string][string]>
 
-#### `static` Text.indexOf(string, searchValue[, fromIndex])
-* `string` <[string][string]>
+#### `static` Text.indexOf(text, searchValue[, fromIndex])
+* `text` <[string][string] | [Text](#class-text)>
 * `searchValue` <[any][Object]>
 * `fromIndex` <[number][number]>
 * returns: <[number][number]>
 
-#### `static` Text.lastIndexOf(string, searchValue[, fromIndex])
-* `string` <[string][string]>
+#### `static` Text.lastIndexOf(text, searchValue[, fromIndex])
+* `text` <[string][string] | [Text](#class-text)>
 * `searchValue` <[any][Object]>
 * `fromIndex` <[number][number]>
 * returns: <[number][number]>
 
-#### `static` Text.match(string, regex)
-* `string` <[string][string]>
+#### `static` Text.match(text, regex)
+* `text` <[string][string] | [Text](#class-text)>
 * `regex` <[RegExp][RegExp] | [string][string]>
 * returns: <?[Array][Array]<[string][string]>>
 
-#### `static` Text.matchAll(string, regex)
-* `string` <[string][string]>
+#### `static` Text.matchAll(text, regex)
+* `text` <[string][string] | [Text](#class-text)>
 * `regex` <[RegExp][RegExp] | [string][string]>
 * returns: <[Symbol.iterator][Symbol.iterator]<[Array][Array]<[string][string]>>>
 
-#### `static` Text.search(string[, regex])
-* `string` <[string][string]>
+#### `static` Text.search(text[, regex])
+* `text` <[string][string] | [Text](#class-text)>
 * `regex` <[RegExp][RegExp] | [string][string]>
 * returns: <[number][number]>
 
-#### `static` Text.split(string[, separator[, limit]])
-* `string` <[string][string]>
+#### `static` Text.split(text[, separator[, limit]])
+* `text` <[string][string] | [Text](#class-text)>
 * `separator` <[RegExp][RegExp] | [string][string]>
 * `limit` <[number][number]>
 * returns: <[Array][Array]<[string][string]>>
 
-#### `static` Text.startsWith(string, searchValue[, position])
-* `string` <[string][string]>
+#### `static` Text.startsWith(text, searchValue[, position])
+* `text` <[string][string] | [Text](#class-text)>
 * `searchValue` <[any][Object]>
 * `position` <[number][number]>
 * returns: <[boolean][boolean]>
 
-#### `static` Text.endsWith(string, searchValue[, length])
-* `string` <[string][string]>
+#### `static` Text.endsWith(text, searchValue[, length])
+* `text` <[string][string] | [Text](#class-text)>
 * `searchValue` <[any][Object]>
 * `length` <[number][number]>
 * returns: <[boolean][boolean]>
 
-#### `static` Text.includes(string, searchValue[, fromIndex])
-* `string` <[string][string] | [Array][Array]>
+#### `static` Text.includes(text, searchValue[, fromIndex])
+* `text` <[string][string] | [Text](#class-text)>
 * `searchValue` <[any][Object]>
 * `fromIndex` <[number][number]>
 * returns: <[boolean][boolean]>
@@ -174,31 +178,7 @@
 * `value` <[any][Object]>
 * returns: <[boolean][boolean]>
 
-#### `static` Text.isJSON(value)
-* `value` <[any][Object]>
-* returns: <[boolean][boolean]>
-
 #### `static` Text.isASCII(value)
-* `value` <[any][Object]>
-* returns: <[boolean][boolean]>
-
-#### `static` Text.isBase64(value)
-* `value` <[any][Object]>
-* returns: <[boolean][boolean]>
-
-#### `static` Text.isIPv4(value)
-* `value` <[any][Object]>
-* returns: <[boolean][boolean]>
-
-#### `static` Text.isIPv6(value)
-* `value` <[any][Object]>
-* returns: <[boolean][boolean]>
-
-#### `static` Text.isURL(value)
-* `value` <[any][Object]>
-* returns: <[boolean][boolean]>
-
-#### `static` Text.isUUID(value)
 * `value` <[any][Object]>
 * returns: <[boolean][boolean]>
 
@@ -219,25 +199,7 @@
 #### `get` text.isEmpty
 * returns: <[boolean][boolean]>
 
-#### `get` text.isJSON
-* returns: <[boolean][boolean]>
-
 #### `get` text.isASCII
-* returns: <[boolean][boolean]>
-
-#### `get` text.isBase64
-* returns: <[boolean][boolean]>
-
-#### `get` text.isIPv4
-* returns: <[boolean][boolean]>
-
-#### `get` text.isIPv6
-* returns: <[boolean][boolean]>
-
-#### `get` text.isURL
-* returns: <[boolean][boolean]>
-
-#### `get` text.isUUID
 * returns: <[boolean][boolean]>
 
 #### text.setValue(value)

@@ -13,32 +13,8 @@ class Text {
     return !this.length
   }
 
-  get isJSON() {
-    return Helper.isJSON(this.value)
-  }
-
   get isASCII() {
     return Helper.isASCII(this.value)
-  }
-
-  get isBase64() {
-    return Helper.isBase64(this.value)
-  }
-
-  get isIPv4() {
-    return Helper.isIPv4(this.value)
-  }
-
-  get isIPv6() {
-    return Helper.isIPv6(this.value)
-  }
-
-  get isURL() {
-    return Helper.isURL(this.value)
-  }
-
-  get isUUID() {
-    return Helper.isUUID(this.value)
   }
 
   get [Symbol.toStringTag]() {
@@ -46,12 +22,12 @@ class Text {
   }
 
   setValue(value) {
-    this.value = Helper.string(value)
+    this.value = Helper.toString(value)
     return this
   }
 
   add(text) {
-    this.value += Helper.string(text)
+    this.value += Helper.toString(text)
     return this
   }
 
@@ -139,10 +115,6 @@ class Text {
     return this.setValue()
   }
 
-  clone() {
-    return new Text(this.value)
-  }
-
   words() {
     return Helper.words(this.value)
   }
@@ -199,6 +171,10 @@ class Text {
     return this.value
   }
 
+  clone() {
+    return new Text(this.value)
+  }
+
   [Symbol.toPrimitive](hint) {
     return hint === 'string' ? this.toString() : this.valueOf()
   }
@@ -206,25 +182,6 @@ class Text {
 Text.value = ''
 Text.length = 0
 Text.words = Helper.words
-Text.capitalize = Helper.capitalize
-Text.lowerCase = Helper.lowerCase
-Text.upperCase = Helper.upperCase
-Text.camelCase = Helper.camelCase
-Text.pascalCase = Helper.pascalCase
-Text.snakeCase = Helper.snakeCase
-Text.constantCase = Helper.constantCase
-Text.kebabCase = Helper.kebabCase
-Text.trainCase = Helper.trainCase
-Text.dotCase = Helper.dotCase
-Text.template = Helper.template
-Text.padStart = Helper.padStart
-Text.padEnd = Helper.padEnd
-Text.repeat = Helper.repeat
-Text.replace = Helper.replace
-Text.replaceAll = Helper.replaceAll
-Text.slice = Helper.slice
-Text.substring = Helper.substring
-Text.trim = Helper.trim
 Text.indexOf = Helper.indexOf
 Text.lastIndexOf = Helper.lastIndexOf
 Text.match = Helper.match
@@ -235,13 +192,27 @@ Text.startsWith = Helper.startsWith
 Text.endsWith = Helper.endsWith
 Text.includes = Helper.includes
 Text.isEmpty = Helper.isEmpty
-Text.isJSON = Helper.isJSON
 Text.isASCII = Helper.isASCII
-Text.isBase64 = Helper.isBase64
-Text.isIPv4 = Helper.isIPv4
-Text.isIPv6 = Helper.isIPv6
-Text.isURL = Helper.isURL
-Text.isUUID = Helper.isUUID
+Text.valueOf = text => text instanceof Text ? text.value : text
+Text.capitalize = text => Helper.capitalize(Text.valueOf(text))
+Text.lowerCase = text => Helper.lowerCase(Text.valueOf(text))
+Text.upperCase = text => Helper.upperCase(Text.valueOf(text))
+Text.camelCase = text => Helper.camelCase(Text.valueOf(text))
+Text.pascalCase = text => Helper.pascalCase(Text.valueOf(text))
+Text.snakeCase = text => Helper.snakeCase(Text.valueOf(text))
+Text.constantCase = text => Helper.constantCase(Text.valueOf(text))
+Text.kebabCase = text => Helper.kebabCase(Text.valueOf(text))
+Text.trainCase = text => Helper.trainCase(Text.valueOf(text))
+Text.dotCase = text => Helper.dotCase(Text.valueOf(text))
+Text.template = (text, props, options) => Helper.template(Text.valueOf(text), props, options)
+Text.padStart = (text, targetLength, padString) => Helper.padStart(Text.valueOf(text), targetLength, padString)
+Text.padEnd = (text, targetLength, padString) => Helper.padEnd(Text.valueOf(text), targetLength, padString)
+Text.repeat = (text, count) => Helper.repeat(Text.valueOf(text), count)
+Text.replace = (text, regex, replacer) => Helper.replace(Text.valueOf(text), regex, replacer)
+Text.replaceAll = (text, regex, replacer) => Helper.replaceAll(Text.valueOf(text), regex, replacer)
+Text.slice = (text, startIndex, endIndex) => Helper.slice(Text.valueOf(text), startIndex, endIndex)
+Text.substring = (text, startIndex, beforeIndex) => Helper.substring(Text.valueOf(text), startIndex, beforeIndex)
+Text.trim = text => Helper.trim(Text.valueOf(text))
 Text.from = text => new Text(text)
 
 module.exports = Text

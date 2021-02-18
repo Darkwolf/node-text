@@ -4,25 +4,6 @@ export default class Text {
   static value = ''
   static length = 0
   static words = Helper.words
-  static capitalize = Helper.capitalize
-  static lowerCase = Helper.lowerCase
-  static upperCase = Helper.upperCase
-  static camelCase = Helper.camelCase
-  static pascalCase = Helper.pascalCase
-  static snakeCase = Helper.snakeCase
-  static constantCase = Helper.constantCase
-  static kebabCase = Helper.kebabCase
-  static trainCase = Helper.trainCase
-  static dotCase = Helper.dotCase
-  static template = Helper.template
-  static padStart = Helper.padStart
-  static padEnd = Helper.padEnd
-  static repeat = Helper.repeat
-  static replace = Helper.replace
-  static replaceAll = Helper.replaceAll
-  static slice = Helper.slice
-  static substring = Helper.substring
-  static trim = Helper.trim
   static indexOf = Helper.indexOf
   static lastIndexOf = Helper.lastIndexOf
   static match = Helper.match
@@ -33,13 +14,87 @@ export default class Text {
   static endsWith = Helper.endsWith
   static includes = Helper.includes
   static isEmpty = Helper.isEmpty
-  static isJSON = Helper.isJSON
   static isASCII = Helper.isASCII
-  static isBase64 = Helper.isBase64
-  static isIPv4 = Helper.isIPv4
-  static isIPv6 = Helper.isIPv6
-  static isURL = Helper.isURL
-  static isUUID = Helper.isUUID
+
+  static valueOf(text) {
+    return text instanceof Text ? text.value : text
+  }
+
+  static capitalize(text) {
+    return Helper.capitalize(Text.valueOf(text))
+  }
+
+  static lowerCase(text) {
+    return Helper.lowerCase(Text.valueOf(text))
+  }
+
+  static upperCase(text) {
+    return Helper.upperCase(Text.valueOf(text))
+  }
+
+  static camelCase(text) {
+    return Helper.camelCase(Text.valueOf(text))
+  }
+
+  static pascalCase(text) {
+    return Helper.pascalCase(Text.valueOf(text))
+  }
+
+  static snakeCase(text) {
+    return Helper.snakeCase(Text.valueOf(text))
+  }
+
+  static constantCase(text) {
+    return Helper.constantCase(Text.valueOf(text))
+  }
+
+  static kebabCase(text) {
+    return Helper.kebabCase(Text.valueOf(text))
+  }
+
+  static trainCase(text) {
+    return Helper.trainCase(Text.valueOf(text))
+  }
+
+  static dotCase(text) {
+    return Helper.dotCase(Text.valueOf(text))
+  }
+
+  static template(text, props, options) {
+    return Helper.template(Text.valueOf(text), props, options)
+  }
+
+  static padStart(text, targetLength, padString) {
+    return Helper.padStart(Text.valueOf(text), targetLength, padString)
+  }
+
+  static padEnd(text, targetLength, padString) {
+    return Helper.padEnd(Text.valueOf(text), targetLength, padString)
+  }
+
+  static repeat(text, count) {
+    return Helper.repeat(Text.valueOf(text), count)
+  }
+
+  static replace(text, regex, replacer) {
+    return Helper.replace(Text.valueOf(text), regex, replacer)
+  }
+
+  static replaceAll(text, regex, replacer) {
+    return Helper.replaceAll(Text.valueOf(text), regex, replacer)
+  }
+
+  static slice(text, startIndex, endIndex) {
+    return Helper.slice(Text.valueOf(text), startIndex, endIndex)
+  }
+
+  static substring(text, startIndex, beforeIndex) {
+    return Helper.substring(Text.valueOf(text), startIndex, beforeIndex)
+  }
+
+  static trim(text) {
+    return Helper.trim(Text.valueOf(text))
+  }
 
   static from(text) {
     return new Text(text)
@@ -57,32 +112,8 @@ export default class Text {
     return !this.length
   }
 
-  get isJSON() {
-    return Helper.isJSON(this.value)
-  }
-
   get isASCII() {
     return Helper.isASCII(this.value)
-  }
-
-  get isBase64() {
-    return Helper.isBase64(this.value)
-  }
-
-  get isIPv4() {
-    return Helper.isIPv4(this.value)
-  }
-
-  get isIPv6() {
-    return Helper.isIPv6(this.value)
-  }
-
-  get isURL() {
-    return Helper.isURL(this.value)
-  }
-
-  get isUUID() {
-    return Helper.isUUID(this.value)
   }
 
   get [Symbol.toStringTag]() {
@@ -90,12 +121,12 @@ export default class Text {
   }
 
   setValue(value) {
-    this.value = Helper.string(value)
+    this.value = Helper.toString(value)
     return this
   }
 
   add(text) {
-    this.value += Helper.string(text)
+    this.value += Helper.toString(text)
     return this
   }
 
@@ -183,10 +214,6 @@ export default class Text {
     return this.setValue()
   }
 
-  clone() {
-    return new Text(this.value)
-  }
-
   words() {
     return Helper.words(this.value)
   }
@@ -241,6 +268,10 @@ export default class Text {
 
   toJSON() {
     return this.value
+  }
+
+  clone() {
+    return new Text(this.value)
   }
 
   [Symbol.toPrimitive](hint) {
