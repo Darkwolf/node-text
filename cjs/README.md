@@ -11,21 +11,18 @@ import Text from '@darkwolf/text.mjs'
 // CommonJS
 const Text = require('@darkwolf/text.cjs')
 
-const text = new Text('Ave, @{username}!')
-text.template({username: 'PavelWolfDark'}) // => 'Ave, @PavelWolfDark!'
-text.insert({username: 'PavelWolfDark'}).value // => 'Ave, @PavelWolfDark!'
-const other = text
-  .clone()
+const text = new Text('Ave, Darkwolf!')
   .newLine()
-  .add('WFC: {wallet.wfc}')
-  .insert({
+  .add('Ave, @{username}!')
+  .template({username: 'PavelWolfDark'})
+  .newLine()
+  .add('WFC: {wallet.balance}')
+  .template({
     wallet: {
-      wfc: '1.00000001'
+      balance: '1.00000001'
     }
   })
-text.value // => 'Ave, @PavelWolfDark!'
-other.value // => 'Ave, @PavelWolfDark!\nWFC: 1.00000001'
-const template = `${new Text('Ave, Darkwolf!').newLine()}${other}` // => 'Ave, Darkwolf!\nAve, @PavelWolfDark!\nWFC: 1.00000001'
+text.value // () => 'Ave, Darkwolf!\nAve, @PavelWolfDark!\nWFC: 1.00000001'
 ```
 ## [API Documentation](https://github.com/Darkwolf/node-text/blob/master/docs/API.md)
 ## Contact Me

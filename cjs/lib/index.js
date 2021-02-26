@@ -32,95 +32,135 @@ class Text {
   }
 
   newLine() {
-    return this.add('\n')
+    this.value += '\n'
+    return this
+  }
+
+  toLowerCase() {
+    this.value = this.value.toLowerCase()
+    return this
+  }
+
+  toUpperCase() {
+    this.value = this.value.toUpperCase()
+    return this
   }
 
   capitalize() {
-    return this.setValue(Helper.capitalize(this.value))
+    this.value = Helper.capitalize(this.value)
+    return this
   }
 
   lowerCase() {
-    return this.setValue(this.value.toLowerCase())
+    this.value = Helper.lowerCase(this.value)
+    return this
   }
 
   upperCase() {
-    return this.setValue(this.value.toUpperCase())
+    this.value = Helper.upperCase(this.value)
+    return this
   }
 
   camelCase() {
-    return this.setValue(Helper.camelCase(this.value))
+    this.value = Helper.camelCase(this.value)
+    return this
   }
 
   pascalCase() {
-    return this.setValue(Helper.pascalCase(this.value))
+    this.value = Helper.pascalCase(this.value)
+    return this
   }
 
   snakeCase() {
-    return this.setValue(Helper.snakeCase(this.value))
+    this.value = Helper.snakeCase(this.value)
+    return this
   }
 
   constantCase() {
-    return this.setValue(Helper.constantCase(this.value))
+    this.value = Helper.constantCase(this.value)
+    return this
   }
 
   kebabCase() {
-    return this.setValue(Helper.kebabCase(this.value))
+    this.value = Helper.kebabCase(this.value)
+    return this
   }
 
   trainCase() {
-    return this.setValue(Helper.trainCase(this.value))
+    this.value = Helper.trainCase(this.value)
+    return this
   }
 
   dotCase() {
-    return this.setValue(Helper.dotCase(this.value))
-  }
-
-  insert(props, options) {
-    return this.setValue(Helper.template(this.value, props, options))
-  }
-
-  padStart(targetLength, padString) {
-    return this.setValue(this.value.padStart(targetLength, padString))
-  }
-
-  padEnd(targetLength, padString) {
-    return this.setValue(this.value.padEnd(targetLength, padString))
-  }
-
-  repeat(count) {
-    return this.setValue(this.value.repeat(count))
-  }
-
-  replace(regex, replacer) {
-    return this.setValue(this.value.replace(regex, replacer))
-  }
-
-  replaceAll(regex, replacer) {
-    return this.setValue(this.value.replaceAll(regex, replacer))
-  }
-
-  slice(startIndex, endIndex) {
-    return this.setValue(this.value.slice(startIndex, endIndex))
-  }
-
-  substring(startIndex, beforeIndex) {
-    return this.setValue(this.value.substring(startIndex, beforeIndex))
-  }
-
-  trim() {
-    return this.setValue(this.value.trim())
-  }
-
-  clear() {
-    return this.setValue()
-  }
-
-  words() {
-    return Helper.words(this.value)
+    this.value = Helper.dotCase(this.value)
+    return this
   }
 
   template(props, options) {
-    return Helper.template(this.value, props, options)
+    this.value = Helper.template(this.value, props, options)
+    return this
+  }
+
+  insert(insertString, startIndex, endIndex) {
+    this.value = Helper.insert(this.value, insertString, startIndex, endIndex)
+    return this
+  }
+
+  padStart(targetLength, padString) {
+    this.value = this.value.padStart(targetLength, padString)
+    return this
+  }
+
+  padEnd(targetLength, padString) {
+    this.value = this.value.padEnd(targetLength, padString)
+    return this
+  }
+
+  repeat(count) {
+    this.value = this.value.repeat(count)
+    return this
+  }
+
+  replace(pattern, replacer) {
+    this.value = this.value.replace(pattern, replacer)
+    return this
+  }
+
+  replaceAll(pattern, replacer) {
+    this.value = this.value.replaceAll(pattern, replacer)
+    return this
+  }
+
+  slice(startIndex, endIndex) {
+    this.value = this.value.slice(startIndex, endIndex)
+    return this
+  }
+
+  substring(startIndex, beforeIndex) {
+    this.value = this.value.substring(startIndex, beforeIndex)
+    return this
+  }
+
+  trim() {
+    this.value = this.value.trim()
+    return this
+  }
+
+  clear() {
+    this.value = ''
+    return this
+  }
+
+  asciiWords() {
+    return Helper.asciiWords(this.value)
+  }
+
+  unicodeWords() {
+    return Helper.unicodeWords(this.value)
+  }
+
+  words(pattern) {
+    return Helper.words(this.value, pattern)
   }
 
   indexOf(searchValue, fromIndex) {
@@ -131,16 +171,16 @@ class Text {
     return this.value.lastIndexOf(searchValue, fromIndex)
   }
 
-  match(regex) {
-    return this.value.match(regex)
+  match(pattern) {
+    return this.value.match(pattern)
   }
 
-  matchAll(regex) {
-    return this.value.matchAll(regex)
+  matchAll(pattern) {
+    return this.value.matchAll(pattern)
   }
 
-  search(regex) {
-    return this.value.search(regex)
+  search(pattern) {
+    return this.value.search(pattern)
   }
 
   split(separator, limit) {
@@ -181,7 +221,31 @@ class Text {
 }
 Text.value = ''
 Text.length = 0
+Text.asciiWords = Helper.asciiWords
+Text.unicodeWords = Helper.unicodeWords
 Text.words = Helper.words
+Text.toLowerCase = Helper.toLowerCase
+Text.toUpperCase = Helper.toUpperCase
+Text.capitalize = Helper.capitalize
+Text.lowerCase = Helper.lowerCase
+Text.upperCase = Helper.upperCase
+Text.camelCase = Helper.camelCase
+Text.pascalCase = Helper.pascalCase
+Text.snakeCase = Helper.snakeCase
+Text.constantCase = Helper.constantCase
+Text.kebabCase = Helper.kebabCase
+Text.trainCase = Helper.trainCase
+Text.dotCase = Helper.dotCase
+Text.template = Helper.template
+Text.insert = Helper.insert
+Text.padStart = Helper.padStart
+Text.padEnd = Helper.padEnd
+Text.repeat = Helper.repeat
+Text.replace = Helper.replace
+Text.replaceAll = Helper.replaceAll
+Text.slice = Helper.slice
+Text.substring = Helper.substring
+Text.trim = Helper.trim
 Text.indexOf = Helper.indexOf
 Text.lastIndexOf = Helper.lastIndexOf
 Text.match = Helper.match
@@ -193,26 +257,6 @@ Text.endsWith = Helper.endsWith
 Text.includes = Helper.includes
 Text.isEmpty = Helper.isEmpty
 Text.isASCII = Helper.isASCII
-Text.valueOf = text => text instanceof Text ? text.value : text
-Text.capitalize = text => Helper.capitalize(Text.valueOf(text))
-Text.lowerCase = text => Helper.lowerCase(Text.valueOf(text))
-Text.upperCase = text => Helper.upperCase(Text.valueOf(text))
-Text.camelCase = text => Helper.camelCase(Text.valueOf(text))
-Text.pascalCase = text => Helper.pascalCase(Text.valueOf(text))
-Text.snakeCase = text => Helper.snakeCase(Text.valueOf(text))
-Text.constantCase = text => Helper.constantCase(Text.valueOf(text))
-Text.kebabCase = text => Helper.kebabCase(Text.valueOf(text))
-Text.trainCase = text => Helper.trainCase(Text.valueOf(text))
-Text.dotCase = text => Helper.dotCase(Text.valueOf(text))
-Text.template = (text, props, options) => Helper.template(Text.valueOf(text), props, options)
-Text.padStart = (text, targetLength, padString) => Helper.padStart(Text.valueOf(text), targetLength, padString)
-Text.padEnd = (text, targetLength, padString) => Helper.padEnd(Text.valueOf(text), targetLength, padString)
-Text.repeat = (text, count) => Helper.repeat(Text.valueOf(text), count)
-Text.replace = (text, regex, replacer) => Helper.replace(Text.valueOf(text), regex, replacer)
-Text.replaceAll = (text, regex, replacer) => Helper.replaceAll(Text.valueOf(text), regex, replacer)
-Text.slice = (text, startIndex, endIndex) => Helper.slice(Text.valueOf(text), startIndex, endIndex)
-Text.substring = (text, startIndex, beforeIndex) => Helper.substring(Text.valueOf(text), startIndex, beforeIndex)
-Text.trim = text => Helper.trim(Text.valueOf(text))
 Text.from = text => new Text(text)
 
 module.exports = Text

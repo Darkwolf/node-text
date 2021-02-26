@@ -1,6 +1,6 @@
 {
   "name": "@darkwolf/text.cjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Text",
   "main": "./lib/index.js",
   "engines": {
@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/Darkwolf/node-text#readme",
   "dependencies": {
-    "@darkwolf/helper.cjs": "^1.0.7"
+    "@darkwolf/helper.cjs": "^1.0.9"
   }
 }

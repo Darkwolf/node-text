@@ -15,81 +15,94 @@
 #### `static` Text.length
 * returns: <[number][number]> Defaults to `0`.
 
-#### `static` Text.valueOf(text)
-* `text` <[string][string] | [Text](#class-text)>
-* returns: <[string][string]>
-
-#### `static` Text.words(text)
-* `text` <[string][string] | [Text](#class-text)>
+#### `static` Text.asciiWords(text)
+* `text` <[Text](#class-text) | [string][string]>
 * returns: <[Array][Array]<[string][string]>>
 
+#### `static` Text.unicodeWords(text)
+* `text` <[Text](#class-text) | [string][string]>
+* returns: <[Array][Array]<[string][string]>>
+
+#### `static` Helper.words(text[, pattern])
+* `string` <[string][string]>
+* `pattern` <[string][string] | [RegExp][RegExp]>
+* returns: <[Array][Array]<[string][string]>>
+
+#### `static` Text.toLowerCase(text)
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave, darkwolf!'`.
+* returns: <[string][string]>
+
+#### `static` Text.toUpperCase(text)
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'AVE, DARKWOLF!'`.
+* returns: <[string][string]>
+
 #### `static` Text.capitalize(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'Ave, darkwolf!'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'Ave, darkwolf!'`.
 * returns: <[string][string]>
 
 #### `static` Text.lowerCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'ave, darkwolf!'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave darkwolf!`.
 * returns: <[string][string]>
 
 #### `static` Text.upperCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'AVE, DARKWOLF!'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'AVE DARKWOLF'`.
 * returns: <[string][string]>
 
 #### `static` Text.camelCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'aveDarkwolf'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'aveDarkwolf'`.
 * returns: <[string][string]>
 
 #### `static` Text.pascalCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'AveDarkwolf'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'AveDarkwolf'`.
 * returns: <[string][string]>
 
 #### `static` Text.snakeCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'ave_darkwolf'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave_darkwolf'`.
 * returns: <[string][string]>
 
 #### `static` Text.constantCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'AVE_DARKWOLF'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'AVE_DARKWOLF'`.
 * returns: <[string][string]>
 
 #### `static` Text.kebabCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'ave-darkwolf'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave-darkwolf'`.
 * returns: <[string][string]>
 
 #### `static` Text.trainCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'Ave-Darkwolf'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'Ave-Darkwolf'`.
 * returns: <[string][string]>
 
 #### `static` Text.dotCase(text)
-* `text` <[string][string] | [Text](#class-text)> E.g., `'Ave, Darkwolf!'` will return `'ave.darkwolf'`.
+* `text` <[Text](#class-text) | [string][string]> E.g., `'Ave, Darkwolf!'` will return `'ave.darkwolf'`.
 * returns: <[string][string]>
 
-#### `static` Text.template(text, props[, options])
-* `text` <[string][string] | [Text](#class-text)> Property path must have format: `'{object.property.name.array[0]}'` or `'array[-1]'`. Path with index `'[-1]'` will return the last argument of the array, then `'[-2]'` will return the second last argument. If the negative modulo index is greater than the length of the array, the first argument will be returned.
-* `props` <[Object][Object]>
+#### `static` Text.template(text[, props [, options])
+* `string` <[Text](#class-text) | [string][string]> Property path must have format: `'{object.property.key.path[0]}'`.
+* `props` <[Object][Object]> Defaults to `{}`.
 * `options` <[Object][Object]>
-  * `normalize` <?[boolean][boolean]> If `true` and property is `undefined` or `null` will be replaced with `''`. Defaults to `true`.
+  * `ignoreNotExists` <?[boolean][boolean]> If `true` and property is `undefined` or `null` will be replaced with `''`. Defaults to `true`.
 * returns: <[string][string]>
 
 #### `static` Text.padStart(text, targetLength[, padString])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `targetLength` <[number][number]>
 * `padString` <[string][string]>
 * returns: <[string][string]>
 
 #### `static` Text.padEnd(text, targetLength[, padString])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `targetLength` <[number][number]>
 * `padString` <[string][string]>
 * returns: <[string][string]>
 
 #### `static` Text.repeat(text, count)
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `count` <[number][number]>
 * returns: <[string][string]>
 
-#### `static` Text.replace(text, regex, replacer)
-* `text` <[string][string] | [Text](#class-text)>
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### `static` Text.replace(text, pattern, replacer)
+* `text` <[Text](#class-text) | [string][string]>
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * `replacer` <[string][string] | [Function][Function](<[string][string]>, ...<[string][string]>, <[number][number]>, <[string][string]>)>
   * `match` <[string][string]>
   * `...groups` <[string][string]>
@@ -97,9 +110,9 @@
   * `string` <[string][string]>
 * returns: <[string][string]>
 
-#### `static` Text.replaceAll(text, regex, replacer)
-* `text` <[string][string] | [Text](#class-text)>
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### `static` Text.replaceAll(text, pattern, replacer)
+* `text` <[Text](#class-text) | [string][string]>
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * `replacer` <[string][string] | [Function][Function](<[string][string]>, ...<[string][string]>, <[number][number]>, <[string][string]>)>
   * `match` <[string][string]>
   * `...groups` <[string][string]>
@@ -108,68 +121,68 @@
 * returns: <[string][string]>
 
 #### `static` Text.slice(text, startIndex[, endIndex])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `startIndex` <[number][number]>
 * `endIndex` <[number][number]>
 * returns: <[string][string]>
 
 #### `static` Text.substring(text, startIndex[, beforeIndex])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `startIndex` <[number][number]>
 * `beforeIndex` <[number][number]>
 * returns: <[string][string]>
 
 #### `static` Text.trim(text)
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * returns: <[string][string]>
 
 #### `static` Text.indexOf(text, searchValue[, fromIndex])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `searchValue` <[any][Object]>
 * `fromIndex` <[number][number]>
 * returns: <[number][number]>
 
 #### `static` Text.lastIndexOf(text, searchValue[, fromIndex])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `searchValue` <[any][Object]>
 * `fromIndex` <[number][number]>
 * returns: <[number][number]>
 
-#### `static` Text.match(text, regex)
-* `text` <[string][string] | [Text](#class-text)>
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### `static` Text.match(text, pattern)
+* `text` <[Text](#class-text) | [string][string]>
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * returns: <?[Array][Array]<[string][string]>>
 
-#### `static` Text.matchAll(text, regex)
-* `text` <[string][string] | [Text](#class-text)>
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### `static` Text.matchAll(text, pattern)
+* `text` <[Text](#class-text) | [string][string]>
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * returns: <[Symbol.iterator][Symbol.iterator]<[Array][Array]<[string][string]>>>
 
-#### `static` Text.search(text[, regex])
-* `text` <[string][string] | [Text](#class-text)>
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### `static` Text.search(text[, pattern])
+* `text` <[Text](#class-text) | [string][string]>
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * returns: <[number][number]>
 
 #### `static` Text.split(text[, separator[, limit]])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `separator` <[RegExp][RegExp] | [string][string]>
 * `limit` <[number][number]>
 * returns: <[Array][Array]<[string][string]>>
 
 #### `static` Text.startsWith(text, searchValue[, position])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `searchValue` <[any][Object]>
 * `position` <[number][number]>
 * returns: <[boolean][boolean]>
 
 #### `static` Text.endsWith(text, searchValue[, length])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `searchValue` <[any][Object]>
 * `length` <[number][number]>
 * returns: <[boolean][boolean]>
 
 #### `static` Text.includes(text, searchValue[, fromIndex])
-* `text` <[string][string] | [Text](#class-text)>
+* `text` <[Text](#class-text) | [string][string]>
 * `searchValue` <[any][Object]>
 * `fromIndex` <[number][number]>
 * returns: <[boolean][boolean]>
@@ -213,6 +226,12 @@
 #### text.newLine()
 * returns: <[this](#class-text)>
 
+#### text.toLowerCase()
+* returns: <[this](#class-text)>
+
+#### text.toUpperCase()
+* returns: <[this](#class-text)>
+
 #### text.capitalize()
 * returns: <[this](#class-text)>
 
@@ -222,7 +241,7 @@
 #### text.upperCase()
 * returns: <[this](#class-text)>
 
-#### text.camelCase()
+#### text.toCamelCase()
 * returns: <[this](#class-text)>
 
 #### text.pascalCase()
@@ -243,10 +262,16 @@
 #### text.dotCase()
 * returns: <[this](#class-text)>
 
-#### text.insert(props[, options])
-* `props` <[Object][Object]>
+#### text.template(props[, options])
+* `props` <[Object][Object]> Defaults to `{}`.
 * `options` <[Object][Object]>
-  * `normalize` <?[boolean][boolean]> If `true` and property is `undefined` or `null` will be replaced with `''`. Defaults to `true`.
+  * `ignoreNotExists` <?[boolean][boolean]> If `true` and property is `undefined` or `null` will be replaced with `''`. Defaults to `true`.
+* returns: <[this](#class-text)>
+
+#### text.insert(insertString[, startIndex[, endIndex]])
+* `insertString` <[string][string]>
+* `startIndex` <[number][number]> Defaults to `text.length`.
+* `endIndex` <[number][number]> Defaults to `text.length`.
 * returns: <[this](#class-text)>
 
 #### text.padStart(targetLength[, padString])
@@ -263,8 +288,8 @@
 * `count` <[number][number]>
 * returns: <[this](#class-text)>
 
-#### text.replace(regex, replacer)
-`regex` <[RegExp][RegExp] | [string][string]>
+#### text.replace(pattern, replacer)
+`pattern` <[RegExp][RegExp] | [string][string]>
 * `replacer` <[string][string] | [Function][Function](<[string][string]>, ...<[string][string]>, <[number][number]>, <[string][string]>)>
  * `match` <[string][string]>
  * `...groups` <[string][string]>
@@ -272,8 +297,8 @@
  * `string` <[string][string]>
 * returns: <[this](#class-text)>
 
-#### text.replaceAll(regex, replacer)
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### text.replaceAll(pattern, replacer)
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * `replacer` <[string][string] | [Function][Function](<[string][string]>, ...<[string][string]>, <[number][number]>, <[string][string]>)>
   * `match` <[string][string]>
   * `...groups` <[string][string]>
@@ -300,13 +325,20 @@
 #### text.clone()
 * returns: <[Text](#class-text)>
 
-#### text.words()
+#### text.asciiWords()
+* returns: <[Array][Array]<[string][string]>>
+
+#### text.unicodeWords()
+* returns: <[Array][Array]<[string][string]>>
+
+#### text.words([pattern])
+* `pattern` <[string][string] | [RegExp][RegExp]>
 * returns: <[Array][Array]<[string][string]>>
 
 #### text.template(props[, options])
-* `props` <[Object][Object]>
+* `props` <[Object][Object]> Defaults to `{}`.
 * `options` <[Object][Object]>
-  * `normalize` <?[boolean][boolean]> If `true` and property is `undefined` or `null` will be replaced with `''`. Defaults to `true`.
+  * `ignoreNotExists` <?[boolean][boolean]> If `true` and property is `undefined` or `null` will be replaced with `''`. Defaults to `true`.
 * returns: <[string][string]>
 
 #### text.indexOf(searchValue[, fromIndex])
@@ -319,16 +351,16 @@
 * `fromIndex` <[number][number]>
 * returns: <[number][number]>
 
-#### text.match(regex)
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### text.match(pattern)
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * returns: <?[Array][Array]<[string][string]>>
 
-#### text.matchAll(regex)
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### text.matchAll(pattern)
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * returns: <[Symbol.iterator][Symbol.iterator]<[Array][Array]<[string][string]>>>
 
-#### text.search([regex])
-* `regex` <[RegExp][RegExp] | [string][string]>
+#### text.search([pattern])
+* `pattern` <[RegExp][RegExp] | [string][string]>
 * returns: <[number][number]>
 
 #### text.split([separator[, limit]])
