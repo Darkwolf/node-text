@@ -216,7 +216,7 @@
 * returns: <[boolean][boolean]>
 
 #### text.setValue(value)
-* `value` <[any][Object]> If `null` or `undefined` will return `''`.
+* `value` <[any][Object]> If `null` or `undefined` will return `''`. Defaults to `''`.
 * returns: <[this](#class-text)>
 
 #### text.add(text)
