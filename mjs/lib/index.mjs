@@ -242,11 +242,11 @@ export default class Text {
     return this.value.includes(searchValue, fromIndex)
   }
 
-  toString() {
+  valueOf() {
     return this.value
   }
 
-  valueOf() {
+  toString() {
     return this.value
   }
 
